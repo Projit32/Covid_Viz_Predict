@@ -91,11 +91,29 @@ for row in data:
         impact=impact.values
         if len(impact)!=0:
             impact=impact[0]
-            testing.append([date,row['state'].upper(),codes[row['state'].upper()],row['totaltested'],impact])
-
+            testing.append([date,row['state'].upper(),codes[row['state'].upper()],row['totaltested'],row['positive'],impact])
 
 testing=pd.DataFrame(testing)
-testing.columns=['Date','State','Code','Tests','Wellness']
+testing.columns=['Date','State','Code','Tests','Positive','Impact']
+testing.Tests=pd.to_numeric(testing.Tests)
+testing.Positive=pd.to_numeric(testing.Positive)
+testing['Cumulative Test']=testing.Tests
+testing['Cumulative Positive']=testing.Positive
+
+unique_codes=pd.unique(testing.Code)
+for code in unique_codes:
+    test_data=testing[testing.Code==code]
+    prev_test=prev_positive=0
+    for i in test_data.index:
+        testing.Tests.loc[i]=testing.Tests.loc[i]-prev_test
+        prev_test=testing['Cumulative Test'].loc[i]
+        if not np.isnan(testing['Cumulative Positive'].loc[i]):
+            testing.Positive.loc[i]=testing.Positive.loc[i]-prev_positive
+            prev_positive=testing['Cumulative Positive'].loc[i]
+        else:
+            testing.Positive.loc[i]=0
+            testing['Cumulative Positive'].loc[i]=prev_positive
+
 
 # Total
 url = "https://api.covid19india.org/csv/latest/state_wise.csv"
@@ -112,7 +130,7 @@ rcv_total=total[['State','Recovered','Code']]
 rcv_total['Status']=['Recovered']*len(rcv_total)
 dth_total=total[['State','Deaths','Code']]
 dth_total['Status']=['Deaths']*len(dth_total)
-cnf_total.columns=rcv_total.columns=dth_total.columns=['State','Code','Cases','Status']
+cnf_total.columns=rcv_total.columns=dth_total.columns=['State','Cases','Code','Status']
 total=pd.concat([cnf_total,rcv_total,dth_total])
 
 
@@ -201,7 +219,7 @@ for state in state_code:
 
 
 # Saving Files
-daily.to_excel('Daily Formatted.xlsx', index=False)
+#daily.to_excel('Daily Formatted.xlsx', index=False)
 contribution_daily.to_excel('Contribution.xlsx', index=False)
 testing.to_excel('Test Report.xlsx', index=False)
 total.to_excel("Total Data.xlsx",index=False)
