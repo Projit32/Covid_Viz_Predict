@@ -1,7 +1,7 @@
 # Covid-19 India Visualization and Prediction
 This is a Visialization that was created as a submission to the [FLATTENING THE CURVE: COVID-19 DATA CHALLENGE](https://cgdv.github.io/challenges/COVID-19/?fbclid=IwAR1Kuy0orhoGu2I2rXPODXSqVQvb86Ioa0CMH7AR0PEtjCI4_FzfkEDLFJ0).
 
-Here we used Tableau to generate the visualizations, which you can see from [here](https://public.tableau.com/shared/7XCMTG2Q3?:display_count=y&:origin=viz_share_link&:embed=y), for the following :
+We generate the visualizations using Tableau, which you can be accessed from [here](https://public.tableau.com/shared/7XCMTG2Q3?:display_count=y&:origin=viz_share_link&:embed=y), for the following :
 
 1. Tree Map of Overall Confirmed, Decesed and Recovered Cases in India **(Till May 1, 2020).**
 
