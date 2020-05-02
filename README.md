@@ -19,9 +19,9 @@ We generate the visualizations using Tableau, which you can be accessed from [he
 
 ![Predictions](Images/COVID-19%20Prediction.png)
 
-For this purpose, we collected all our data, using Pyhton, from [Crowdsourced database for COVID-19](https://api.covid19india.org/) and has been formatted such that it can be used in tablue to generate visualizations. All the formatted data has been saved as excel files in ```Output``` folder.
+For this purpose, we collected data, using Pyhton, from [Crowdsourced database for COVID-19](https://api.covid19india.org/) and formatted in such a way that it can be used in Tableau to generate visualizations. Entire formatted data has been saved as excel file in ```Output``` folder.
 
-Pupose of the ```daily.py``` file was to calculate the following:
+Purpose of the ```daily.py``` file was to calculate the following:
 - State-wise daily & cumulative cases for Confirmed, Recovered and Deceased cases. (API doesnt provides cumulative\/total number of cases)
 
 - Daily wellness Factor of individual states:
@@ -33,7 +33,7 @@ Pupose of the ```daily.py``` file was to calculate the following:
 
 - Rolling averages of daily cases and Changes in daily cases
 
-We've created some basic visualization using ```Matplotlib``` to verify some results like :
+We've created some basic visualization using ```Matplotlib``` to verify certain results:
 1. The Cumulative Cases in India (Viz only shows the confirm cases but all others like recovered and deceased are there in the file).
 ![Cumulative Cases](Images/Figure%202020-05-01%20080000.png)
 2. Rolling average of daily confirmed cases. [Read more on Rolling Averages.](https://www.portent.com/blog/analytics/rolling-averages-math-moron.htm)
