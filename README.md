@@ -1,7 +1,7 @@
 # Covid-19 India Visualization and Prediction
 This is a Visialization that was created as a submission to the [FLATTENING THE CURVE: COVID-19 DATA CHALLENGE](https://cgdv.github.io/challenges/COVID-19/?fbclid=IwAR1Kuy0orhoGu2I2rXPODXSqVQvb86Ioa0CMH7AR0PEtjCI4_FzfkEDLFJ0).
 
-Here we used Tableau to generate the visualizations of the following :
+Here we used Tableau to generate the visualizations, which you can see from [here](https://public.tableau.com/shared/7XCMTG2Q3?:display_count=y&:origin=viz_share_link&:embed=y), for the following :
 
 1. Tree Map of Overall Confirmed, Decesed and Recovered Cases in India **(Till May 1, 2020).**
 
@@ -21,14 +21,6 @@ Here we used Tableau to generate the visualizations of the following :
 
 For this purpose, we collected all our data, using Pyhton, from [Crowdsourced database for COVID-19](https://api.covid19india.org/) and has been formatted such that it can be used in tablue to generate visualizations. All the formatted data has been saved as excel files in ```Output``` folder.
 
-We've created some basic visualization from Python using ```Matplotlib``` to verify some results like :
-1. The Cumulative Cases in India (Viz only shows the confirm cases but all others like recovered and deceased are there in the file).
-![Cumulative Cases](Images/Figure%202020-05-01%20080000.png)
-2. Rolling average of daily confirmed cases. [Read more on Rolling Averages.](https://www.portent.com/blog/analytics/rolling-averages-math-moron.htm)
-![Daily Rolling Averages](Images/Figure%202020-04-29%20153127.png)
-3. Rolling average of changes in  confimed cases.
-![Changes in daily cases Rolling avegrage](Images/Figure%202020-04-29%20153116.png)
-
 Pupose of the ```daily.py``` file was to calculate the following:
 - State-wise daily & cumulative cases for Confirmed, Recovered and Deceased cases. (API doesnt provides cumulative\/total number of cases)
 
@@ -40,6 +32,14 @@ Pupose of the ```daily.py``` file was to calculate the following:
 - Wellness vs Positives of individual states.
 
 - Rolling averages of daily cases and Changes in daily cases
+
+We've created some basic visualization using ```Matplotlib``` to verify some results like :
+1. The Cumulative Cases in India (Viz only shows the confirm cases but all others like recovered and deceased are there in the file).
+![Cumulative Cases](Images/Figure%202020-05-01%20080000.png)
+2. Rolling average of daily confirmed cases. [Read more on Rolling Averages.](https://www.portent.com/blog/analytics/rolling-averages-math-moron.htm)
+![Daily Rolling Averages](Images/Figure%202020-04-29%20153127.png)
+3. Rolling average of changes in  confimed cases.
+![Changes in daily cases Rolling avegrage](Images/Figure%202020-04-29%20153116.png)
 
 Purpose of ```rnn_covid_daily.py``` file:
 
