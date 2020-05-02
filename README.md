@@ -7,11 +7,13 @@ We generate the visualizations using Tableau, which you can be accessed from [he
 
 ![Total Cases](Images/Cumulative%20COVID-19%20Cases%20in%20India.png)
 
-2. Line chart for Daily nuber of Cases and Bar chart for the cumulative cases in a particular state and the comparison of positive cases vs the wellenss factor of that state **(Till May 1, 2020).**
+2. Line chart for daily cases and bar chart for the cumulative cases in a particular state
+   The comparison of positive cases and the wellenss factor of that state **(Till May 1, 2020).**
 
 ![Daily Report](Images/Daily%20COVID-19%20report.png)
 
-3. Weekly rolling average of confirmed Cases and average of changes in confirmed cases. **(Till May 1, 2020).**
+3. Weekly rolling average of confirmed cases and of changes in confirmed cases.**(Till May 1, 2020).**
+This provides the rowth rate at a weekly level and gives an insight into the fluctuations happening in confirmed cases.
 
 ![Weekly Report](Images/Weekly%20rolling%20average.png)
 
