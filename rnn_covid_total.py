@@ -69,11 +69,11 @@ regressor.add(Dropout(0.2))
 regressor.add(Dense(units = 1))
 regressor.compile(optimizer = 'adam', loss = 'mean_squared_error')
 
-mc = ModelCheckpoint('best_model_cumulative_v1.h5', monitor='loss', mode='min', verbose=1, save_best_only=True)
+mc = ModelCheckpoint('Model/best_model_cumulative_v1.h5', monitor='loss', mode='min', verbose=1, save_best_only=True)
 
 regressor.fit(X_train, y_train, epochs = 150,  batch_size = 4, callbacks=[mc])
 
-regressor=load_model('best_model_cumulative_v1.h5')
+regressor=load_model('Model/best_model_cumulative_v1.h5')
 
 X_test = []
 y_test=[]
@@ -122,10 +122,10 @@ plt.legend()
 plt.show()
 
 # training of the Test set to make future predictions
-regressor=load_model('best_model_cumulative_v1.h5')
+regressor=load_model('Model/best_model_cumulative_v1.h5')
 new_mc = ModelCheckpoint('best_model_cumulative_v2.h5', monitor='loss', mode='min', verbose=1, save_best_only=True)
 regressor.fit(X_test, y_test, epochs = 500,  batch_size = 4, callbacks=[new_mc])
-regressor=load_model('best_model_cumulative_v2.h5')
+regressor=load_model('Model/best_model_cumulative_v2.h5')
 
 y_pred_new = regressor.predict(X_test)
 y_pred_new = sc.inverse_transform(y_pred_new)
