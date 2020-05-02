@@ -58,22 +58,22 @@ daily['Cases']=pd.to_numeric(daily['Cases'])
 tt_daily['Cases']=pd.to_numeric(tt_daily['Cases'])
 
 
-# Contribution
+# Wellness
 confirmed_data=daily[daily['Status']=='Confirmed'].reset_index()
 recovered_data=daily[daily['Status']=='Recovered'].reset_index()
 deceased_data=daily[daily['Status']=='Deceased'].reset_index()
 
-contribution= recovered_data['Cases']-(confirmed_data['Cases']+deceased_data['Cases'])
+wellness= recovered_data['Cases']-(confirmed_data['Cases']+deceased_data['Cases'])
 
-contrib_list=list()
-for i in range(len(contribution)):
+wellness_list=list()
+for i in range(len(wellness)):
     date=confirmed_data.Date.iloc[i]
     code=confirmed_data.Code.iloc[i]
     state=names[code.upper()]
-    contrib_list.append([date,code,state,confirmed_data.Cases.iloc[i],recovered_data.Cases.iloc[i],deceased_data.Cases.iloc[i],contribution[i]])
+    wellness_list.append([date,code,state,confirmed_data.Cases.iloc[i],recovered_data.Cases.iloc[i],deceased_data.Cases.iloc[i],wellness[i]])
     
-contribution_daily=pd.DataFrame(contrib_list)
-contribution_daily.columns=['Date','Code','State','Confirmed','Recovered','Deaths','Contribution']
+wellness_daily=pd.DataFrame(wellness_list)
+wellness_daily.columns=['Date','Code','State','Confirmed','Recovered','Deaths','Impact']
 
 
 # Testing
@@ -87,7 +87,7 @@ for row in data:
     if row['totaltested'] != '':
         date=row['updatedon'].split('/')
         date=datetime.date(int(date[2]), int(date[1]), int(date[0]))
-        impact=contribution_daily['Contribution'][(contribution_daily['State']==row['state'].upper()) & (contribution_daily['Date']==date)]
+        impact=wellness_daily['Impact'][(wellness_daily['State']==row['state'].upper()) & (wellness_daily['Date']==date)]
         impact=impact.values
         if len(impact)!=0:
             impact=impact[0]
@@ -216,13 +216,10 @@ for state in state_code:
     state_cumulative=pd.concat([state_cumulative,state_data])
         
 
-
-
 # Saving Files
-#daily.to_excel('Daily Formatted.xlsx', index=False)
-contribution_daily.to_excel('Contribution.xlsx', index=False)
-testing.to_excel('Test Report.xlsx', index=False)
-total.to_excel("Total Data.xlsx",index=False)
-daily_confirmed.to_excel('Rolling Averages.xlsx', index=False)
-state_cumulative.to_excel('Statewise Cumulative.xlsx', index=False)
+wellness_daily.to_excel('Output/Wellness.xlsx', index=False)
+testing.to_excel('Output/Test Report.xlsx', index=False)
+total.to_excel("Output/Total Data.xlsx",index=False)
+daily_confirmed.to_excel('Output/Rolling Averages.xlsx', index=False)
+state_cumulative.to_excel('Output/Statewise Cumulative.xlsx', index=False)
 
