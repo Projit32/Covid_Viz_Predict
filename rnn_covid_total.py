@@ -169,4 +169,4 @@ future_predictions= pd.DataFrame(np.append(np.array(dates).reshape(-1,1),predict
 future_predictions.columns=['Date','Predictions']
 
 
-future_predictions.to_excel("Future Cumulative Predictions.xlsx", index=False)
+future_predictions.to_excel("Output/Future Cumulative Predictions.xlsx", index=False)
