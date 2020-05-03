@@ -55,13 +55,13 @@ from tensorflow.keras.models import load_model
 regressor = Sequential()
 
 # Adding the first LSTM layer and some Dropout regularisation
-regressor.add(LSTM(units = 300, return_sequences = True, input_shape = (X_train.shape[1], X_train.shape[2])))
+regressor.add(LSTM(units = 500, return_sequences = True, input_shape = (X_train.shape[1], X_train.shape[2])))
 regressor.add(Dropout(0.2))
 
-regressor.add(LSTM(units = 300, return_sequences = True))
+regressor.add(LSTM(units = 500, return_sequences = True))
 regressor.add(Dropout(0.2))
 
-regressor.add(LSTM(units = 300, return_sequences = False))
+regressor.add(LSTM(units = 500, return_sequences = False))
 regressor.add(Dropout(0.2))
 
 # Adding the output layer
