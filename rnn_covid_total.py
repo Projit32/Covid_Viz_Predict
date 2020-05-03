@@ -124,7 +124,7 @@ plt.show()
 # training of the Test set to make future predictions
 regressor=load_model('Models/best_model_cumulative_v1.h5')
 new_mc = ModelCheckpoint('best_model_cumulative_v2.h5', monitor='loss', mode='min', verbose=1, save_best_only=True)
-regressor.fit(X_test, y_test, epochs = 500,  batch_size = 4, callbacks=[new_mc])
+regressor.fit(X_test, y_test, epochs = 500,  batch_size = 2, callbacks=[new_mc])
 regressor=load_model('Models/best_model_cumulative_v2.h5')
 
 y_pred_new = regressor.predict(X_test)
