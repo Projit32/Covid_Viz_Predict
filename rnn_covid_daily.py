@@ -167,4 +167,4 @@ import pandas as pd
 future_predictions= pd.DataFrame(np.append(np.array(dates).reshape(-1,1),predictions, axis=1))
 future_predictions.columns=['Date','Predictions']
 
-future_predictions.to_excel("Future Daily Predictions.xlsx", index=False)
+future_predictions.to_excel("Output/Future Daily Predictions.xlsx", index=False)
