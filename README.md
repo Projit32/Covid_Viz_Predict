@@ -3,7 +3,7 @@ This is a Visualization that was created as a submission to the [FLATTENING THE 
 
 We generate the visualizations using Tableau, which you can be accessed from [here](https://public.tableau.com/shared/7XCMTG2Q3?:display_count=y&:origin=viz_share_link&:embed=y), for the following :
 
-1. Tree Map of Overall Confirmed, Decesed and Recovered Cases in India **(Till May 1, 2020).**
+1. Tree Map of Overall Confirmed, Deceased and Recovered Cases in India **(Till May 1, 2020).**
 
 ![Total Cases](Images/Cumulative%20COVID-19%20Cases%20in%20India.png)
 
