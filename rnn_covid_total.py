@@ -10,7 +10,7 @@ import pandas as pd
 import datetime
 
 # Importing the training set
-dataset = pd.read_excel('Rolling Averages.xlsx')
+dataset = pd.read_excel('Output/Rolling Averages.xlsx')
 
 total_set =dataset.iloc[:,5:6].values
 print(total_set,total_set.shape)
