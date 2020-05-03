@@ -26,14 +26,19 @@ For this purpose, we collected data, using Pyhton, from [Crowdsourced database f
 Purpose of the ```daily.py``` file was to calculate the following:
 - State-wise daily & cumulative cases for Confirmed, Recovered and Deceased cases. (API doesnt provides cumulative\/total number of cases)
 
-- Daily wellness Factor of individual states:
-> Wellness = Recovered - Confirmed - Death 
-
 - Cumulative and daily tests conducted and the positive detections of individual states. (API only provides cumulative)
 
-- Wellness vs Positives of individual states.
+- Daily wellness Factor of individual states:
+> Wellness Factor = Recovered - Confirmed - Death
+> Wellness Factor signifies the improvements made by government and medical industry towards curing patients, even though the number of cases on a daily basis is also inreasing slightly.
 
-- Rolling averages of daily cases and Changes in daily cases
+- Wellness vs Positive cases in each state
+> We compared the wellness factor with respect to the number of confirmed/positive cases in each state. This helps to make an inference about the enhancement in the recovery rate of the state. On any given day, if we see the wellness curve over that of the positives, then we can conclude that the state is in a recovery mode.
+
+- Rolling averages of daily cases and changes in daily cases
+> On any given day, the rolling average signifies the number of cases that happened on an average in the past week (till that day) and accordingly the average of the differences between the cases with respect to the previous day for the entire past week.
+> Flattening the rolling average curve indicates that the number of cases will increase linearly. 
+> Linear increase in the rolling average indicates that the cases will increase exponentially. 
 
 We've created some basic visualization using ```Matplotlib``` to verify certain results:
 1. The Cumulative Cases in India (Viz only shows the confirm cases but all others like recovered and deceased are there in the file).
