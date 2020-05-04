@@ -50,7 +50,7 @@ We've created some basic visualization using ```Matplotlib``` to verify certain 
 
 Purpose of ```rnn_covid_daily.py``` file:
 
-This is a Recurrent Neural Network that was build using [LSTM](https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM) from [Tensorflow 2.1.0 - Keras](https://www.tensorflow.org/guide/keras) to predict the possible number of daily cases in the next 7 days. For this, we used the past data and converted into the format that the official site suggest ```[batch, timesteps, feature]```. For us, that becomes a matrix of  ```rows x 3 x 1``` where the row referes to the data availave - timestamp.
+This is a Recurrent Neural Network that was build using [LSTM](https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM) from [Tensorflow 2.1.0 - Keras](https://www.tensorflow.org/guide/keras) to predict the possible number of daily cases in the next 7 days. For this, we used the past data and converted into the format that the official site suggest ```[batch, timesteps, feature]```. For us, that becomes a matrix of  ```N x 3 x 1``` where the N referes to the length of data availave.
 
 Results: 
 
